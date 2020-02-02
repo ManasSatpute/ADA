@@ -1,31 +1,40 @@
 #include<iostream>
 using namespace std;
+void div(int x,int y,int *q,int *r)
+{
+	int rem;
+	int m=x;
+	int n=y;
+	for(rem=0;m>=n;rem++)
+	{
+		m-=n;
+	}
+	*q=rem;
+	*r=m;
+}
 int main()
 {
-	int x,y,m,n,rem=0;
+	int x,y,q,r;
 	cout<<"Enter Numerator - ";
 	cin>>x;
 	cout<<"Enter Denominator - ";
 	cin>>y;
-	m=x;
-	n=y;
 	if (y==0) {
 		cout<<"Not Defined! Denominator can not be 0.";
 		return 0;
 	}
-	else if(x==0)
-		m=0;
+	else if(x==0) {
+		q=0;
+		r=0;
+	}
 	else if(y==1) {
-		rem=m;
-		m=0;
+		r=x;
+		q=0;
 	}
 	else {
-		for(;m>=n;rem++)
-		{
-			m-=n;
-		}
+		div(x,y,&q,&r);
 	}
-	cout<<"Quotient - "<<rem<<endl;
-	cout<<"Remainder - "<<m;
+	cout<<"Quotient - "<<q<<endl;
+	cout<<"Remainder - "<<r;
 	return 0;
 }
