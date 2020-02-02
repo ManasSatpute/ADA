@@ -3,14 +3,12 @@ using namespace std;
 void div(int x,int y,int *q,int *r)
 {
 	int rem;
-	int m=x;
-	int n=y;
-	for(rem=0;m>=n;rem++)
+	for(rem=0;x>=y;rem++)
 	{
-		m-=n;
+		x-=y;
 	}
 	*q=rem;
-	*r=m;
+	*r=x;
 }
 int main()
 {
