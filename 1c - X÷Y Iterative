@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y,m,n,rem=0;
+	cout<<"Enter Numerator - ";
+	cin>>x;
+	cout<<"Enter Denominator - ";
+	cin>>y;
+	m=x;
+	n=y;
+	if (y==0) {
+		cout<<"Not Defined! Denominator can not be 0.";
+		return 0;
+	}
+	else if(x==0)
+		m=0;
+	else if(y==1) {
+		rem=m;
+		m=0;
+	}
+	else {
+		for(;m>=n;rem++)
+		{
+			m-=n;
+		}
+	}
+	cout<<"Quotient - "<<rem<<endl;
+	cout<<"Remainder - "<<m;
+	return 0;
+}
